@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>PlacesList</title>
+</head>
+<body>
+    <h1>Places List</h1>
+
+    {% if places is not empty %}
+        <p>Here are all your places:</p>
+        <ul>
+            {% for place in places %}
+                <li>{{ place.getPlace }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/places' method='post'>
+        <label for='place'>Places</label>
+        <input id='place' name='place' type='text'>
+
+        <button type='submit'>Add place</button>
+    </form>
+    <form action='/delete_places' method='post'>
+        <button type='submit'>Clear</button>
+    </form>
+</body>
+</html>
